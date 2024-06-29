@@ -28,7 +28,7 @@
 
 	async function sendSubscriptionToServer(subscription) {
 		try {
-			const res = await fetch('/add-push-subscription', {
+			const res = await fetch('https://mongo-google.vercel.app/add-push-subscription', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -60,7 +60,7 @@
 	async function subscribeUser() {
 		if ('serviceWorker' in navigator) {
 			try {
-				const res = await fetch('/vapid-pubKey');
+				const res = await fetch('https://mongo-google.vercel.app/vapid-pubKey');
 				const { data } = await res.json();
 
 				const registration = await navigator.serviceWorker.ready;
