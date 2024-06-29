@@ -20,6 +20,7 @@ export async function handle({ event, resolve }) {
 	if (user) {
 		//console.log('user: ', user);
 		event.locals.user = user.name;
+		event.locals.userId = user.googleId;
 	}
 	//load page as normal
 	return await resolve(event);
