@@ -48,10 +48,10 @@
 			const registration = await navigator.serviceWorker.ready;
 			const subscription = await registration.pushManager.getSubscription();
 			const exists = subscription !== null;
-			/* if (exists) {
+			if (exists) {
 				//just to make sure the susbcription is saved on the server
 				sendSubscriptionToServer(subscription);
-			} */
+			}
 			return exists;
 		}
 		return false;
